@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="wow.js"></script>
+  <script src="typed.js"></script>
   <link rel="stylesheet" href="animate.css" />
 	<script src="jquery.particleground.min.js"></script>
 </head>
@@ -167,7 +168,15 @@
 
 <section>
 	<div class="container" style="width:100%;position:relative;">
-		<h2 style="text-aligned:center;">Something I copied</h2>
+		<h2 style="text-aligned:center;" class="fortyped" >Some Art Work</h2>
+    <div id="typed-strings" style="font-size:30px">
+    <h3>
+    <p>This is typed using<strong>Typed.js</strong>.</p>
+    <p>This can type sentences.</p>
+    </h3>
+    </div>
+    <span id="typed"></span>
+    <br>
 		<div style="width:100%; height:800px; background-color:#b6fcd5;" id="particles" ></div>
 		<div class="container" id="steinsgatevideo" style="position:absolute; top:-50px; z-index:1; left:50%; margin-left:-585px; top:50%; margin-top:-350px;">
 		    <div class="row">
@@ -219,6 +228,14 @@
 </div>
 
 <script>
+ $(function(){
+        $("#typed").typed({
+            stringsElement: $('#typed-strings'),
+            loop:true,
+            loopcount:false
+        });
+    });
+
 	$(document).ready(function() {
 	 $('#particles').particleground({
 	    dotColor: '#5cbdaa',
