@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style></style>
+	<script>
+	var img = new Image();
+	img.src = "xmas.jpg";
+	function initCanvas () {
+		var ctx = document.getElementById('my_canvas').getContext('2d');
+		var cw = ctx.canvas.width, ch = ctx.canvas.height;
+		var flakes = [];
+		function addFlake(){
+			var x = Math.floor(Math.random() * cw) +1;
+			var y = 0;
+			var s = Math.floor(Math.random() * 5) +1;
+			flakes.push({"x":x, "y":y, "s":s});
+		}
+		function snow(){
+			addFlake();
+			for(var i=0; i< flakes.length; i++){
+				ctx.fillStyle = "rgba(255, 255, 255, 0.80)";
+				ctx.beginPath();
+				ctx.arc(flakes[i].x, flakes[i].y += flakes[i].s*0.5, flakes[i].s * 0.5, 0, Math.PI * 2, false);
+				ctx.fill();
+				if(flakes[i].y > ch ){
+					flakes.splice(i, 1);
+				}
+			}
+		}
+		function animate(){
+			ctx.clearRect(0, 0, cw, ch);
+			ctx.drawImage(img, 0, 0);
+			snow();
+		}
+		var animteInterval = setInterval(animate, 30);
+	}
+	window.addEventListener('load', function(event){
+		initCanvas();
+	})
+	</script>
+	</head>
+	<body>
+		<canvas id="my_canvas" width="1950" height="850"></canvas>
+		<h1 id="status"></h1>
+	</body>
+</html>
