@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="wow.js"></script>
+  <script src="//fast.eager.io/JnQZWE70Co.js"></script>
   <script src="typed.js"></script>
   <link rel="stylesheet" href="animate.css" />
 	<script src="jquery.particleground.min.js"></script>
@@ -126,22 +127,7 @@
           ptlSize: isMobile || isSmall ? 3 : 1,
           width: 1e9,
           height: 1e9
-        });
-          
-        var gui = new dat.GUI();
-        gui.add(ps, 'ptlGap').min(0).max(5).step(1).onChange(function(){
-          ps.init(true);
-        });
-        gui.add(ps, 'ptlSize').min(1).max(5).step(1).onChange(function(){
-          ps.init(true);
-        });
-        gui.add(ps, 'restless');
-        gui.addColor(ps, 'color').onChange(function(value){
-          ps.monochrome = true;
-          ps.setColor(value);
-          ps.init(true);
-        });
-        
+        });        
         
         (window.addEventListener
          ? window.addEventListener('click', function(){ps.init(true)}, false)
