@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="wow.js"></script>
+  <script src="shortcut.js"></script>
   <script src="typed.js"></script>
   <link rel="stylesheet" href="animate.css" />
 	<script src="jquery.particleground.min.js"></script>
@@ -213,6 +214,10 @@
 </div>
 
 <script>
+shortcut.add("Ctrl+Shift+X",function() {
+  alert("Shortcuts have been added to the page with shortcut.js! :D");
+});
+
  $(function(){
         $("#typed").typed({
             stringsElement: $('#typed-strings'),
@@ -230,6 +235,7 @@
 	  $( "#code" ).text( data );
 	});
 	});
+
 </script>
 </body>
 </html>
