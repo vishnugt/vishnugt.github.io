@@ -24,8 +24,8 @@ var APP = {
 
 			vr = json.project.vr;
 
-			renderer = new THREE.WebGLRenderer( { antialias: true } );
-			renderer.setClearColor( 0x000000 );
+			renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
+			renderer.setClearColor( 0xae92d5 );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			if ( json.project.shadows ) renderer.shadowMap.enabled = true;
 			this.dom = renderer.domElement;
